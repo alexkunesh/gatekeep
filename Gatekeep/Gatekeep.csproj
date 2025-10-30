@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="GK_Load.png" />
     <None Remove="GK_No.png" />
+    <None Remove="GK_Question.png" />
     <None Remove="UAsterisk.wav" />
     <None Remove="UQuestion.wav" />
   </ItemGroup>
@@ -21,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="GK_Load.png" />
     <Resource Include="GK_No.png" />
+    <Resource Include="GK_Question.png" />
     <Content Include="UAsterisk.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

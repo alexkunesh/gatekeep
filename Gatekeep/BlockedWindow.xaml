@@ -1,0 +1,26 @@
+﻿<Window x:Class="Gatekeep.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gatekeep"
+        mc:Ignorable="d"
+        Title="Gatekeep" Height="220" Width="562" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="487*"/>
+            <ColumnDefinition Width="97*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="64" Margin="10,10,0,0" VerticalAlignment="Top" Width="64" Source="/GK_No.png"/>
+        <Label Content="Program Blocked" HorizontalAlignment="Left" Margin="79,10,0,0" VerticalAlignment="Top" Height="64" Width="669" VerticalContentAlignment="Center" FontSize="24" Grid.ColumnSpan="2"/>
+        <!--<Label Margin="10,85,10,0" VerticalAlignment="Top" Width="529" Height="43">
+            <TextBox Margin="-5,-5,0,0" Width="529" Text="&quot;program name&quot; is a distraction program. You have not met the required amount of productivity time for the day." TextWrapping="Wrap" />
+        </Label>-->
+        <Button x:Name="AcknowledgeButton" Content="Acknowledge" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Height="42" Width="255" Click="AcknowledgeButton_Click"/>
+        <Button x:Name="OverrideButton" Content="Override" HorizontalAlignment="Left" Margin="284,133,0,0" VerticalAlignment="Top" Height="42" Width="255" Grid.ColumnSpan="2" Click="OverrideButton_Click"/>
+        <TextBlock x:Name="MessageLabel" Margin="10,79,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Grid.ColumnSpan="2"><Run Text="&quot;{0}&quot; is a distraction program. You have not met the daily requirements for productivity and are not yet allowed to use distraction programs."/><LineBreak/><Run/></TextBlock>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="Gatekeep.ConfigurationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gatekeep"
+        mc:Ignorable="d"
+        Title="Gatekeep Configuration" Height="535" Width="809" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <DataTemplate x:Key="ProgramItemTemplate">
+            <Grid Margin="0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Bitmap}" />
+                <Grid Grid.Column="1" Margin="2,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding FriendlyName}" />
+                    <TextBlock Grid.Row="1" Text="{Binding ExecutablePath}" FontSize="9" />
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Label Content="Distraction Programs:" HorizontalAlignment="Left" Margin="14,13,0,0" VerticalAlignment="Top" Height="26" />
+        <ListBox x:Name="DistractibleListBox" SelectionChanged="DistractibleListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Height="205" Margin="14,39,0,0" ItemTemplate="{StaticResource ProgramItemTemplate}" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalAlignment="Left" Width="607" />
+        <Label Content="Productive Programs:" HorizontalAlignment="Left" Margin="14,247,0,0" VerticalAlignment="Top" Height="26"/>
+        <ListBox x:Name="ProductiveListBox" SelectionChanged="ProductiveListBox_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Height="205" Margin="14,273,0,0" ItemTemplate="{StaticResource ProgramItemTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="607" />
+        <Button x:Name="AddDistractionButton" Click="AddDistractionButton_Click" Content="Add Distraction Program ..." HorizontalAlignment="Left" Margin="626,39,0,0" VerticalAlignment="Top" Height="41" Width="161"/>
+        <Button x:Name="AddProductiveButton" Click="AddProductiveButton_Click" Content="Add Productive Program ..." HorizontalAlignment="Left" Margin="626,85,0,0" VerticalAlignment="Top" Height="41" Width="161"/>
+        <Button x:Name="RemoveButton" Click="RemoveButton_Click" Content="Remove Selected" HorizontalAlignment="Left" Margin="626,399,0,0" VerticalAlignment="Top" Height="41" Width="161"/>
+        <Button x:Name="UninstallButton" Click="UninstallButton_Click" Content="Uninstall Gatekeep" HorizontalAlignment="Left" Margin="626,445,0,0" VerticalAlignment="Top" Height="33" Width="161"/>
+
+    </Grid>
+</Window>
